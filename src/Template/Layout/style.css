@@ -1,8 +1,10 @@
+
 .floated-label-wrapper {
     position: relative;
   }
   
-  .floated-label-wrapper label {
+  .floated-label-wrapper label 
+  .callout {
     background: #fefefe;
     color: #1779ba;
     font-size: 0.75rem;
