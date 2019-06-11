@@ -235,6 +235,6 @@ hr {
 
 @media (min-width: 992px) {
     header.row {
-        max-width: 940px;
+        max-width: 500px;
     }
 }
