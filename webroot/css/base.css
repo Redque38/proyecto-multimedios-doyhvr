@@ -2,7 +2,8 @@
    background-color: #fefefe;
  }
 
- .floated-label-wrapper{
+ .floated-label-wrapper
+ {
     position: relative;
     margin: 0 auto;
     width: 450px;
@@ -15,7 +16,8 @@
     margin: 0 auto;
 }
   
-  .floated-label-wrapper label {
+  .floated-label-wrapper label 
+  {
     background: #fefefe;
     color: #1779ba;
     font-size: 0.75rem;

@@ -6,9 +6,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     </head>
     <body>
-        <div>
+        <div class="floated-label-wrapper">
         <form class="callout text-center">
-        <h2>Registrar Usuarios</h2>
+        <h1>Registrar Usuarios</h1>
         <div class="floated-label-wrapper">
             <label for="nombre">Nombre Completo</label>
             <input class="input" type="text" ng-model="nombre" id="nombre" name="nombre input" placeholder="Nombre Completo">
@@ -31,9 +31,16 @@
         </div>
         <input class="button expanded" type="submit" value="Agregar">
             
-            <h1>Hello {{nombre}}!</h1>
         </div>
         </form>
-
+        
+        <form class="callout text-left">
+                <h1>Hello!</h1>
+                <label>Nombre Completo: {{nombre}}</label>
+                <label>Cédula: {{cedula}}</label>
+                <label>Dirección: {{direccion}}</label>
+                <label>Telefono: {{telefono}}</label>
+                <label>Email: {{email}}</label>
+        </form>
     </body>
 </html>
