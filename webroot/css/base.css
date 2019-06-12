@@ -9,7 +9,6 @@
    margin: 0 auto;
  }
 
-
  .floated-label-wrapper
  {
     position: relative;
@@ -23,12 +22,13 @@
     display: block;
     width: 100px;
     padding: 10px;
-    margin: 25px;
+    border-radius: 10px;
 }
 
 .button_div{
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
 }
   
   .floated-label-wrapper label 
@@ -53,11 +53,12 @@
     font-size: 1.75em;
     padding: 0.5em;
     width: 400px;
-    
+    border-radius: 10px;
   }
 
   [type="text"],[type="email"],[type="password"]{
     width: 90%;
+    border-radius: 10px;
   }
   
   [type="text"]:focus,[type="email"]:focus,[type="password"]:focus{
