@@ -6,6 +6,11 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     </head>
     <body>
+        <!-- link to add new users page -->
+<div class='upper-right-opt'>
+    <?php echo $this->Html->link( 'List Users', array( 'action' => 'table' ) ); ?>
+</div>
+<body>
         <div class="floated-label-wrapper">
         <form class="callout text-center">
         <h1>Registrar Usuarios</h1>
@@ -39,14 +44,23 @@
             <input class="input" type="password" ng-model="password2" id="password2" name="password input" placeholder="Confirmar Password">
         </div>
         <div class=button_div>
-            <input class="button expanded" type="submit" value="Login">
-            <input class="button expanded" type="submit" value="Agregar">
-            <input class="button expanded" type="submit" value="Modificar">
-            <input class="button expanded" type="submit" value="Eliminar">
+            <input class="button expanded success" type="submit" value="Agregar">
         </div>    
         </div>
+         <?php 
+//this is our add form, name the fields same as database column names
+echo $this->Form->create('User');
+ 
+    echo $this->Form->input('nombre');
+    echo $this->Form->input('cedula');
+    echo $this->Form->input('direccion');
+    echo $this->Form->input('email');
+    echo $this->Form->input('password', array('type'=>'password'));
+    
+?>
         </form>
-        <?php  echo $this->html->link('View',array('action'=>'users/index'));  ?>
+        <?php  echo $this->html->link('View',array('action'=>'table'));  ?>
+
 
         <form class="callout text-left">
                 <h1>Hello!</h1>
@@ -56,5 +70,7 @@
                 <label>Telefono: {{telefono}}</label>
                 <label>Email: {{email}}</label>
         </form>
+
+        
     </body>
 </html>
