@@ -9,6 +9,7 @@
    margin: 0 auto;
  }
 
+
  .floated-label-wrapper
  {
     position: relative;
@@ -52,13 +53,7 @@
     border-radius: 4px;
     font-size: 1.75em;
     padding: 0.5em;
-    width: 400px;
-    border-radius: 10px;
-  }
-
-  [type="text"],[type="email"],[type="password"]{
-    width: 90%;
-    border-radius: 10px;
+    
   }
   
   [type="text"]:focus,[type="email"]:focus,[type="password"]:focus{
