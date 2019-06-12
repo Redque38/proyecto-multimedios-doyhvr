@@ -39,14 +39,15 @@
             <input class="input" type="password" ng-model="password2" id="password2" name="password input" placeholder="Confirmar Password">
         </div>
         <div class=button_div>
-            <input class="button expanded" type="submit" value="Consultar">
+            <input class="button expanded" type="submit" value="Login">
             <input class="button expanded" type="submit" value="Agregar">
             <input class="button expanded" type="submit" value="Modificar">
             <input class="button expanded" type="submit" value="Eliminar">
         </div>    
         </div>
         </form>
-        
+        <?php  echo $this->html->link('View',array('action'=>'users/index'));  ?>
+
         <form class="callout text-left">
                 <h1>Hello!</h1>
                 <label>Nombre Completo: {{nombre}}</label>
