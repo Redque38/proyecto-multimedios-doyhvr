@@ -29,8 +29,21 @@
             <label for="email">Email</label>
             <input class="input" type="email" ng-model="email" id="email" name="email input" placeholder="Email">
         </div>
-        <input class="button expanded" type="submit" value="Agregar">
-            
+        <div class="floated-label-wrapper">
+            <label for="password">Password</label>
+            <input class="input" type="password" ng-model="password" id="password" name="password input" placeholder="Password">
+        </div>
+
+        <div class="floated-label-wrapper">
+            <label for="password2">Confirmar Password</label>
+            <input class="input" type="password" ng-model="password2" id="password2" name="password input" placeholder="Confirmar Password">
+        </div>
+        <div class=button_div>
+            <input class="button expanded" type="submit" value="Consultar">
+            <input class="button expanded" type="submit" value="Agregar">
+            <input class="button expanded" type="submit" value="Modificar">
+            <input class="button expanded" type="submit" value="Eliminar">
+        </div>    
         </div>
         </form>
         
@@ -41,6 +54,7 @@
                 <label>Dirección: {{direccion}}</label>
                 <label>Telefono: {{telefono}}</label>
                 <label>Email: {{email}}</label>
+                <label>Password: {{password}}</label>
         </form>
     </body>
 </html>

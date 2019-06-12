@@ -1,19 +1,35 @@
- *{
-   background-color: #fefefe;
+.content{
+  background-color: navajowhite;
+}
+
+* .h1{
+   background-color: navajowhite;
+   width: 500px;
+   color: gray;
+   margin: 0 auto;
  }
+
 
  .floated-label-wrapper
  {
     position: relative;
     margin: 0 auto;
-    width: 450px;
-    max-width: 100%;
+    width: 600px;
+    padding: 10px;
+    border-radius: 20px;
   }
 
   .button.expanded {
     display: block;
     width: 100px;
-    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.button_div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
   
   .floated-label-wrapper label 
@@ -40,10 +56,21 @@
     
   }
   
+  [type="text"]:focus,[type="email"]:focus,[type="password"]:focus{
+     border-color: navajowhite;
+  }
+  
   .floated-label-wrapper label.show {
     opacity: 1;
     top: -0.85rem;
     z-index: 1;
     transition: all 0.15s ease-in;
     
+  }
+  
+  .callout{
+    border-radius: 20px;
+    margin: 0 auto;
+    width: 570px;
+    padding: 10px;
   }
