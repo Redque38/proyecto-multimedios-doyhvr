@@ -1,19 +1,34 @@
- *{
-   background-color: #fefefe;
+.content{
+  background-color: navajowhite;
+}
+
+* .h1{
+   background-color: navajowhite;
+   width: 500px;
+   color: gray;
+   margin: 0 auto;
  }
+
 
  .floated-label-wrapper
  {
     position: relative;
     margin: 0 auto;
-    width: 450px;
-    max-width: 100%;
+    width: 600px;
+    padding: 10px;
+    border-radius: 20px;
   }
 
   .button.expanded {
     display: block;
     width: 100px;
-    margin: 0 auto;
+    padding: 10px;
+    margin: 25px;
+}
+
+.button_div{
+  display: flex;
+  flex-direction: row;
 }
   
   .floated-label-wrapper label 
@@ -37,7 +52,16 @@
     border-radius: 4px;
     font-size: 1.75em;
     padding: 0.5em;
+    width: 400px;
     
+  }
+
+  [type="text"],[type="email"],[type="password"]{
+    width: 90%;
+  }
+  
+  [type="text"]:focus,[type="email"]:focus,[type="password"]:focus{
+     border-color: navajowhite;
   }
   
   .floated-label-wrapper label.show {
@@ -46,4 +70,11 @@
     z-index: 1;
     transition: all 0.15s ease-in;
     
+  }
+  
+  .callout{
+    border-radius: 20px;
+    margin: 0 auto;
+    width: 570px;
+    padding: 10px;
   }
