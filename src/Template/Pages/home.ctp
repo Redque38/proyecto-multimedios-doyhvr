@@ -55,7 +55,6 @@
                 <label>Dirección: {{direccion}}</label>
                 <label>Telefono: {{telefono}}</label>
                 <label>Email: {{email}}</label>
-                <label>Password: {{password}}</label>
         </form>
     </body>
 </html>
