@@ -2,7 +2,7 @@
  
 <!-- link to add new users page -->
 <div class='upper-right-opt'>
-<?php  echo $this->html->link('Home',array('controller'=>'Pages','action'=>'home'));  ?>
+<?php  echo $this->html->link('+Nuevo Usuario',array('controller'=>'Users','action'=>'add'));  ?>
 </div>
 <form class="callout secondary">
         

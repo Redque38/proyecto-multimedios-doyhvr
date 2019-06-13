@@ -44,7 +44,7 @@
         </div>
         <div class=button_div>
                     <?php 
-                        echo $this->Form->create('User');
+                        echo $this->Form->create('user');
                         
                         echo $this->Form->input('nombre', array('value'=>'{{nombre}}','type'=>'hidden'));
                         echo $this->Form->input('cedula', array('value'=>'{{cedula}}','type'=>'hidden'));
