@@ -1,12 +1,12 @@
-<h2>Users</h2>
+<h2>Registro Usuario</h2>
  
 <!-- link to add new users page -->
 <div class='upper-right-opt'>
-<?php  echo $this->html->link('+Nuevo Usuario',array('controller'=>'Users','action'=>'add'));  ?>
+<?php echo $this->html->link('+Nuevo Usuario',array('controller'=>'Users','action'=>'add')); ?>
 </div>
+ 
 <form class="callout secondary">
-        
-<table class="dashboard-table">
+        <table class="dashboard-table">
             <colgroup>
                 <col width="auto">
                 <col width="auto">
@@ -21,7 +21,6 @@
                 <th><a href="#">ID<i class="fa fa-caret-down"></i></a></th>
                 <th><a href="#">Nombre<i class="fa fa-caret-down"></i></a></th>
                 <th><a href="#">Cédula<i class="fa fa-caret-down"></i></a></th>
-                <th><a href="#">Telefono<i class="fa fa-caret-down"></i></a></th>
                 <th><a href="#">Dirección<i class="fa fa-caret-down"></i></a></th>
                 <th><a href="#">Email<i class="fa fa-caret-down"></i></a></th>
                 <th><a href="#">Modificar<i class="fa fa-caret-down"></i></a></th>
@@ -30,36 +29,38 @@
             </thead>
             
             <tbody class=tbody>
+    <?php
+    if(!empty($users)):
+    //loop to show all retrieved records
+    foreach( $users as $user ){
+        echo "<tr>";
+            echo "<td class='listing-inquiry-status'> <h6 class='dashboard-table-text'>{$user->id}</h6></td>";
+            echo "<td class='listing-inquiry-status'> <h6 class='dashboard-table-text'>{$user->nombre}</h6></td>";
+            echo "<td class='listing-inquiry-status'> <h6 class='dashboard-table-text'>{$user->cedula}</h6></td>";
+            echo "<td class='listing-inquiry-status'> <h6 class='dashboard-table-text'>{$user->direccion}</h6></td>";
+            echo "<td class='listing-inquiry-status'> <h6 class='dashboard-table-text'>{$user->email}</h6></td>";
+            echo "<td class='listing-inquiry-status'>
+                    <h6 class='dashboard-table-text'>
+                   {$this->Html->link( 'Edit', array('controller'=>'Users','action' => 'edit', $user->id),array('class'=>'button expanded alert') )}</h6>
+                </td>";
+            echo " <td class='listing-inquiry-status'>
+                    <h6 class='dashboard-table-text'>
+                    <input class='button expanded alert' type='submit' value='Eliminar'></h6>   
+                 </td>";
+                 
+                //in cakephp 2.0, we won't use get request for deleting records
+                //we use post request (for security purposes)
+                echo $this->Form->postLink( 'Delete', array(
+                        'action' => 'delete', 
+                        $user->id), array(
+                            'confirm'=>'Are you sure you want to delete that user?' ) );
+            echo "</td>";
+        echo "</tr>";
+    }else:
+        echo "<td>No record found</td>";
+    endif;
+    ?>
+    </tbody>
             
-        <?php
-            if(!empty($users)):
-            //loop to show all retrieved records
-            foreach( $users as $user ){
-                echo "<tr>";
-                    echo "<td>{$user->id}</td>";
-                    echo "<td>{$user->nombre}</td>";
-                    echo "<td>{$user->cedula}</td>";
-                    echo "<td>{$user->telefono}</td>";
-                    echo "<td>{$user->direccion}</td>";
-                    echo "<td>{$user->email}</td>";
-                    
-                    //here are the links to edit and delete actions
-                    echo "<td class='actions'>";
-                        echo $this->Html->link( 'Edit', array('controller'=>'Users','action' => 'edit', $user->id) );
-                        
-                        //in cakephp 2.0, we won't use get request for deleting records
-                        //we use post request (for security purposes)
-                        echo $this->Form->postLink( 'Delete', array(
-                                'action' => 'delete', 
-                                $user->id), array(
-                                    'confirm'=>'Are you sure you want to delete that user?' ) );
-                    echo "</td>";
-                echo "</tr>";
-            }else:
-                echo "<td>No record found</td>";
-            endif;
-        ?>
-        </tbody>
-    </table>
-
+  </table>
 </form>

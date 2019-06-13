@@ -32,6 +32,8 @@ class UsersController extends AppController
         //this way, we won't have to do if(!empty($this->request->data))
         if ($this->request->is('post')){
             $user = $this->Users->patchEntity($user,$this->request->getData());
+            echo "<script type='text/javascript'>alert('{$user->id}');</script>";
+
             //save new user
             if ($this->Users->save($user)){
                 
