@@ -7,10 +7,10 @@
     <body>
         <!-- link to add new users page -->
 <div class='upper-right-opt'>
-    <?php echo $this->Html->link( 'List Users', array( 'action' => 'table' ) ); ?>
+<?php  echo $this->html->link('Users',array('controller'=>'Users','action'=>'index'));  ?>
 </div>
 <body>
-        <div class="floated-label-wrapper">
+    <div class="floated-label-wrapper">
         <form class="callout text-center">
         <h1>Registrar Usuarios</h1>
         <div class="floated-label-wrapper">
@@ -43,31 +43,28 @@
             <input class="input" type="password" ng-model="password2" id="password2" name="password input" placeholder="Confirmar Password">
         </div>
         <div class=button_div>
-            <?php  echo $this->html->link('Users',array('controller'=>'Users','action'=>'index'));  ?>
-            <?php 
-                echo $this->Form->create('User');
-                
-                echo $this->Form->input('nombre', array('value'=>'{{nombre}}','type'=>'hidden'));
-                echo $this->Form->input('cedula', array('value'=>'{{cedula}}','type'=>'hidden'));
-                echo $this->Form->input('direccion', array('value'=>'{{direccion}}','type'=>'hidden'));
-                echo $this->Form->input('telefono', array('value'=>'{telefono}','type'=>'hidden'));
-                echo $this->Form->input('email', array('value'=>'{{email}}','type'=>'hidden'));
-                echo $this->Form->input('password', array('value'=>'{{password}}','type'=>'hidden'));
-                
-                echo $this->Form->button(__('Add User'),['class'=>'button primary']);  
+                    <?php 
+                        echo $this->Form->create('User');
+                        
+                        echo $this->Form->input('nombre', array('value'=>'{{nombre}}','type'=>'hidden'));
+                        echo $this->Form->input('cedula', array('value'=>'{{cedula}}','type'=>'hidden'));
+                        echo $this->Form->input('direccion', array('value'=>'{{direccion}}','type'=>'hidden'));
+                        echo $this->Form->input('telefono', array('value'=>'{telefono}','type'=>'hidden'));
+                        echo $this->Form->input('email', array('value'=>'{{email}}','type'=>'hidden'));
+                        echo $this->Form->input('password', array('value'=>'{{password}}','type'=>'hidden'));
+                        
+                        echo $this->Form->button(__('Add User'),['class'=>'button primary']);  
 
-                echo $this->Form->end();
+                        echo $this->Form->end();
 
-            ?>
+                    ?>
         </div>    
         </div>
        
         </form>
-        
-
-
+        </div>
         <form class="callout text-left">
-                <h1>Hello!</h1>
+                <h1>Hello! Esto es una prueba de Angular.</h1>
                 <label>Nombre Completo: {{nombre}}</label>
                 <label>Cédula: {{cedula}}</label>
                 <label>Dirección: {{direccion}}</label>
