@@ -44,26 +44,24 @@
         </div>
         <div class=button_div>
             <?php  echo $this->html->link('Users',array('controller'=>'Users','action'=>'index'));  ?>
-            <input class="button expanded" type="submit" value="Login">
-            <input class="button expanded" type="submit" value="Agregar">
-            <input class="button expanded" type="submit" value="Modificar">
-            <input class="button expanded" type="submit" value="Eliminar">
+            <?php 
+                echo $this->Form->create('User');
+                
+                echo $this->Form->input('nombre', array('value'=>'{{nombre}}','type'=>'hidden'));
+                echo $this->Form->input('cedula', array('value'=>'{{cedula}}','type'=>'hidden'));
+                echo $this->Form->input('direccion', array('value'=>'{{direccion}}','type'=>'hidden'));
+                echo $this->Form->input('telefono', array('value'=>'{telefono}','type'=>'hidden'));
+                echo $this->Form->input('email', array('value'=>'{{email}}','type'=>'hidden'));
+                echo $this->Form->input('password', array('value'=>'{{password}}','type'=>'hidden'));
+                
+                echo $this->Form->button(__('Add User'),['class'=>'button primary']);  
+
+                echo $this->Form->end();
+
+            ?>
         </div>    
         </div>
-         <?php 
-echo $this->Form->create('User');
- 
-echo $this->Form->input('firstname'),['ng-model'=>'nombre'];
-echo $this->Form->input('lastname');
-echo $this->Form->input('email');
-echo $this->Form->input('username');
-echo $this->Form->input('password', array('type'=>'password'));
- 
-echo $this->Form->button(__('Add User'),['class'=>'button primary']);  
-
-echo $this->Form->end();
-
-?>
+       
         </form>
         
 
