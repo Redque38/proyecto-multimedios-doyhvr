@@ -20,8 +20,6 @@
     if(!empty($users)):
     //loop to show all retrieved records
     foreach( $users as $user ){
-        echo "<script type='text/javascript'>alert({$user->firstname});</script>";
-
         echo "<tr>";
             echo "<td>{$user->id}</td>";
             echo "<td>{$user->firstname}</td>";
@@ -31,13 +29,13 @@
              
             //here are the links to edit and delete actions
             echo "<td class='actions'>";
-                echo $this->Html->link( 'Edit', array('action' => 'edit', $user['User']['id']) );
+                echo $this->Html->link( 'Edit', array('controller'=>'Users','action' => 'edit', $user->id) );
                  
                 //in cakephp 2.0, we won't use get request for deleting records
                 //we use post request (for security purposes)
                 echo $this->Form->postLink( 'Delete', array(
                         'action' => 'delete', 
-                        $user['User']['id']), array(
+                        $user->id), array(
                             'confirm'=>'Are you sure you want to delete that user?' ) );
             echo "</td>";
         echo "</tr>";

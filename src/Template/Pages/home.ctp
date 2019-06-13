@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     </head>
     <body>
         <!-- link to add new users page -->
@@ -19,7 +18,7 @@
             <input class="input" type="text" ng-model="nombre" id="nombre" name="nombre input" placeholder="Nombre Completo">
         </div>
         <div class="floated-label-wrapper">
-            <label for="cedula">Cédula</label>
+            <label for="cedula">cvCédula</label>
             <input class="input" type="text" ng-model="cedula" id="cedula" name="cedula input" placeholder="Cedula">
         </div>
         <div class="floated-label-wrapper">
@@ -44,7 +43,7 @@
             <input class="input" type="password" ng-model="password2" id="password2" name="password input" placeholder="Confirmar Password">
         </div>
         <div class=button_div>
-            <?php  echo $this->html->link('Users',array('controller'=>'users','action'=>'index'));  ?>
+            <?php  echo $this->html->link('Users',array('controller'=>'Users','action'=>'index'));  ?>
             <input class="button expanded" type="submit" value="Login">
             <input class="button expanded" type="submit" value="Agregar">
             <input class="button expanded" type="submit" value="Modificar">
@@ -52,15 +51,18 @@
         </div>    
         </div>
          <?php 
-//this is our add form, name the fields same as database column names
 echo $this->Form->create('User');
  
-    echo $this->Form->input('nombre');
-    echo $this->Form->input('cedula');
-    echo $this->Form->input('direccion');
-    echo $this->Form->input('email');
-    echo $this->Form->input('password', array('type'=>'password'));
-    
+echo $this->Form->input('firstname'),['ng-model'=>'nombre'];
+echo $this->Form->input('lastname');
+echo $this->Form->input('email');
+echo $this->Form->input('username');
+echo $this->Form->input('password', array('type'=>'password'));
+ 
+echo $this->Form->button(__('Add User'),['class'=>'button primary']);  
+
+echo $this->Form->end();
+
 ?>
         </form>
         
