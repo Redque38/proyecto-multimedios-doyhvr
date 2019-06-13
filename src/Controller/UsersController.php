@@ -34,7 +34,7 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user,$this->request->getData());
             //save new user
             if ($this->Users->save($user)){
-             
+                
                 //set flash to user screen
                 $this->Flash->success('User was added.');
                 //redirect to user list

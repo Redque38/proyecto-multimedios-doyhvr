@@ -16,7 +16,7 @@
 $cakeDescription = 'Proyecto Multimedios hecho en CakePhp';
 ?>
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
