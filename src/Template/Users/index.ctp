@@ -21,6 +21,7 @@
                 <th><a href="#">ID<i class="fa fa-caret-down"></i></a></th>
                 <th><a href="#">Nombre<i class="fa fa-caret-down"></i></a></th>
                 <th><a href="#">Cédula<i class="fa fa-caret-down"></i></a></th>
+                <th><a href="#">Telefono<i class="fa fa-caret-down"></i></a></th>
                 <th><a href="#">Dirección<i class="fa fa-caret-down"></i></a></th>
                 <th><a href="#">Email<i class="fa fa-caret-down"></i></a></th>
                 <th><a href="#">Modificar<i class="fa fa-caret-down"></i></a></th>

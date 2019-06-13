@@ -46,13 +46,12 @@
                     <?php 
                         echo $this->Form->create('User');
                         
-                        echo $this->Form->input('nombre', array('value'=>'{{nombre}}','type'=>'hidden'));
-                        echo $this->Form->input('cedula', array('value'=>'{{cedula}}','type'=>'hidden'));
-                        echo $this->Form->input('direccion', array('value'=>'{{direccion}}','type'=>'hidden'));
-                        echo $this->Form->input('telefono', array('value'=>'{telefono}','type'=>'hidden'));
-                        echo $this->Form->input('email', array('value'=>'{{email}}','type'=>'hidden'));
-                        echo $this->Form->input('password', array('value'=>'{{password}}','type'=>'hidden'));
-                        "<script type='text/javascript'>alert('{{nombre}}');</script>";
+                        echo $this->Form->input('nombre', array('value'=>'{{nombre}}'));
+                        echo $this->Form->input('cedula', array('value'=>'{{cedula}}'));
+                        echo $this->Form->input('direccion', array('value'=>'{{direccion}}'));
+                        echo $this->Form->input('telefono', array('value'=>'{{telefono}}'));
+                        echo $this->Form->input('email', array('value'=>'{{email}}'));
+                        echo $this->Form->input('password', array('value'=>'{{password}}'));
                         echo $this->Form->button(__('Add User'),['class'=>'button primary']);   
                         echo $this->Form->end();
 
