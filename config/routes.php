@@ -64,11 +64,11 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
 
+    $routes->connect('/users/*', ['controller' => 'Users', 'action' => 'index', 'home']);
+
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
      */
-    $routes->connect('/view', ['controller' => 'Users', 'action' => 'index']);
-
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
     /**

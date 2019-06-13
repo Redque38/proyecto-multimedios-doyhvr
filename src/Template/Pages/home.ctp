@@ -44,7 +44,11 @@
             <input class="input" type="password" ng-model="password2" id="password2" name="password input" placeholder="Confirmar Password">
         </div>
         <div class=button_div>
-            <input class="button expanded success" type="submit" value="Agregar">
+            <?php  echo $this->html->link('Users',array('controller'=>'users','action'=>'index'));  ?>
+            <input class="button expanded" type="submit" value="Login">
+            <input class="button expanded" type="submit" value="Agregar">
+            <input class="button expanded" type="submit" value="Modificar">
+            <input class="button expanded" type="submit" value="Eliminar">
         </div>    
         </div>
          <?php 
@@ -59,7 +63,7 @@ echo $this->Form->create('User');
     
 ?>
         </form>
-        <?php  echo $this->html->link('View',array('action'=>'table'));  ?>
+        
 
 
         <form class="callout text-left">

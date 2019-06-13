@@ -14,11 +14,11 @@ class UsersController extends AppController
     /**
      * Index method
      *
-     * @return \Cake\Http\Response|void
+     *
      */
     public function index() {
         //to retrieve all users, need just one line
-        $this->set('users', $this->User->find('all'));
+        $users = $this->set('users', $this->Users->find('all'));
     }
     /**
      * Add method
@@ -31,7 +31,7 @@ class UsersController extends AppController
         //this way, we won't have to do if(!empty($this->request->data))
         if ($this->request->is('post')){
             //save new user
-            if ($this->User->save($this->request->data)){
+            if ($this->Users->save($this->request->data)){
              
                 //set flash to user screen
                 $this->Session->setFlash('User was added.');
@@ -58,14 +58,14 @@ class UsersController extends AppController
         $id = $this->request->params['pass'][0];
          
         //set the user id
-        $this->User->id = $id;
+        $this->Users->id = $id;
          
         //check if a user with this id really exists
         if( $this->User->exists() ){
          
             if( $this->request->is( 'post' ) || $this->request->is( 'put' ) ){
                 //save user
-                if( $this->User->save( $this->request->data ) ){
+                if( $this->Users->save( $this->request->data ) ){
                  
                     //set to user's screen
                     $this->Session->setFlash('User was edited.');
@@ -81,7 +81,7 @@ class UsersController extends AppController
              
                 //we will read the user data
                 //so it will fill up our html form automatically
-                $this->request->data = $this->User->read();
+                $this->request->data = $this->Users->read();
             }
              
         }else{
