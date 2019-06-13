@@ -16,7 +16,7 @@
 $cakeDescription = 'Proyecto Multimedios hecho en CakePhp';
 ?>
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="cakephp" lang="en">
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,6 +29,7 @@ $cakeDescription = 'Proyecto Multimedios hecho en CakePhp';
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('style.css') ?>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <?= $this->Html->script('code')?>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
