@@ -27,23 +27,26 @@ class UsersController extends AppController
      */
     public function add(){
  
+        $user = $this->Users->newEntity();
         //check if it is a post request
         //this way, we won't have to do if(!empty($this->request->data))
         if ($this->request->is('post')){
+            $user = $this->Users->patchEntity($user,$this->request->getData());
             //save new user
-            if ($this->Users->save($this->request->data)){
+            if ($this->Users->save($user)){
              
                 //set flash to user screen
-                $this->Session->setFlash('User was added.');
+                $this->Flash->success('User was added.');
                 //redirect to user list
                 $this->redirect(array('action' => 'index'));
                  
             }else{
                 //if save failed
-                $this->Session->setFlash('Unable to add user. Please, try again.');
+                $this->Flash->error('Unable to add user. Please, try again.');
                  
             }
         }
+        $this->set('post',$user);
     }
 
     /**
@@ -59,9 +62,8 @@ class UsersController extends AppController
          
         //set the user id
         $this->Users->id = $id;
-         
         //check if a user with this id really exists
-        if( $this->User->exists() ){
+        if( $this->Users->exists($id) ){
          
             if( $this->request->is( 'post' ) || $this->request->is( 'put' ) ){
                 //save user
@@ -81,7 +83,8 @@ class UsersController extends AppController
              
                 //we will read the user data
                 //so it will fill up our html form automatically
-                $this->request->data = $this->Users->read();
+                $user = $this->Users->get($id);
+                $this->set('user',$user);
             }
              
         }else{
